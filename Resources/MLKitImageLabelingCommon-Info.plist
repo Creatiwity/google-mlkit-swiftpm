@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 <key>CFBundleName</key>
-<string>MLKitBarcodeScanning</string>
+<string>MLKitImageLabelingCommon</string>
 <key>DTSSDKName</key>
 <string>iphoneos17.4</string>
 <key>DTXcode</key>
@@ -21,7 +21,7 @@
 <key>CFBundlePackageType</key>
 <string>FMWK</string>
 <key>CFBundleShortVersionString</key>
-<string>5.0.0</string>
+<string>6.0.0</string>
 <key>CFBundleSupportedPlatforms</key>
 <array>
 <string>iPhoneOS</string>
@@ -29,7 +29,7 @@
 <key>CFBundleInfoDictionaryVersion</key>
 <string>6.0</string>
 <key>CFBundleExecutable</key>
-<string>MLKitBarcodeScanning</string>
+<string>MLKitImageLabelingCommon</string>
 <key>DTCompiler</key>
 <string>com.apple.compilers.llvm.clang.1_0</string>
 <key>UIRequiredDeviceCapabilities</key>
@@ -47,6 +47,6 @@
 <key>DTPlatformBuild</key>
 <string>21E210</string>
 <key>CFBundleIdentifier</key>
-<string>com.google.firebase.mlkit.barcode-scanning</string>
+<string>com.google.firebase.mlkit.image-labeling-common</string>
 </dict>
 </plist>
