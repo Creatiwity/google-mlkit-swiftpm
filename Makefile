@@ -76,9 +76,6 @@ create-xcframework: build-cocoapods prepare-info-plist
 	@xcframework-maker/.build/release/make-xcframework \
 	-ios ./Pods/MLKitVisionKit/Frameworks/MLKitVisionKit.framework \
 	-output GoogleMLKit
-	@xcframework-maker/.build/release/make-xcframework \
-	-ios ./Pods/TensorFlowLite/Frameworks/tensorflow_lite.framework \
-	-output GoogleMLKit
 
 archive: create-xcframework
 	@cd ./GoogleMLKit/MLKitFaceDetection.xcframework/ios-arm64/MLKitFaceDetection.framework \
@@ -111,8 +108,7 @@ archive: create-xcframework
 	 && zip -r MLKitVision.xcframework.zip MLKitVision.xcframework \
 	 && zip -r MLKitVisionKit.xcframework.zip MLKitVisionKit.xcframework \
 	 && zip -r MLKitObjectDetectionCommon.xcframework.zip MLKitObjectDetectionCommon.xcframework \
-	 && zip -r MLKitImageLabelingCommon.xcframework.zip MLKitImageLabelingCommon.xcframework \
-	 && zip -r tensorflow_lite.xcframework.zip tensorflow_lite.xcframework
+	 && zip -r MLKitImageLabelingCommon.xcframework.zip MLKitImageLabelingCommon.xcframework
 
 checksum: archive
 	@swift package compute-checksum ./GoogleMLKit/MLKitFaceDetection.xcframework.zip > ./GoogleMLKit/MLKitFaceDetection.xcframework.zip.sha256
@@ -125,6 +121,5 @@ checksum: archive
 	@swift package compute-checksum ./GoogleMLKit/MLKitObjectDetectionCommon.xcframework.zip > ./GoogleMLKit/MLKitObjectDetectionCommon.xcframework.zip.sha256
 	@swift package compute-checksum ./GoogleMLKit/MLKitImageLabeling.xcframework.zip > ./GoogleMLKit/MLKitImageLabeling.xcframework.zip.sha256
 	@swift package compute-checksum ./GoogleMLKit/MLKitImageLabelingCommon.xcframework.zip > ./GoogleMLKit/MLKitImageLabelingCommon.xcframework.zip.sha256
-	@swift package compute-checksum ./GoogleMLKit/tensorflow_lite.xcframework.zip > ./GoogleMLKit/tensorflow_lite.xcframework.zip.sha256
 .PHONY:
 run: checksum
